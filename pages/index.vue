@@ -2,21 +2,27 @@
 <div class="caixa">
     <h1 class="centralizado"><img class="logo" src="https://i2.wp.com/multarte.com.br/wp-content/uploads/2019/03/pokemon-png-logo.png?fit=2000%2C736&ssl=1" alt="Logo Pokemon sem fundo"></h1>
     <div class="search-title">
-        <input type="text" v-model="search" placeholder="Search for Pokemon" class="search">
-        <input type="submit" value="Pesquisar Pokemon" class="enviar">
     </div>
+
+
     <ul>
-        <li v-for="pokemon in pokemons.results" :key="pokemon.name">{{pokemon.name}}</li>
+        <li v-for="pokemon in listSearch" :key="pokemon.name"><a :href="'pokemon/' + pokemon.name">{{pokemon.name}}</a></li>
     </ul>
 </div>
 </template>
 
 <script setup>
 
+import {ref, watch} from "vue"
 
 
-const listPokemon = await fetch('https://pokeapi.co/api/v2/pokemon/?limit=2500')
+const search = ref("")
+
+const listPokemon = await fetch('https://pokeapi.co/api/v2/pokemon/?limit=1126')
 const pokemons = await listPokemon.json()
+
+let listSearch = pokemons.results
+
 
 
 </script>
