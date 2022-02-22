@@ -1,22 +1,15 @@
 <template>
 <div class="caixa">
     <h1 class="centralizado"><img class="logo" src="https://i2.wp.com/multarte.com.br/wp-content/uploads/2019/03/pokemon-png-logo.png?fit=2000%2C736&ssl=1" alt="Logo Pokemon sem fundo"></h1>
-    <div class="search-title">
-    </div>
-
 
     <ul>
-        <li v-for="pokemon in listSearch" :key="pokemon.name"><a :href="'pokemon/' + pokemon.name">{{pokemon.name}}</a></li>
+        <li class="listaPoke" v-for="pokemon in listSearch" :key="pokemon.name"><a :href="'pokemon/' + pokemon.name">{{pokemon.name}}</a></li>
     </ul>
 </div>
 </template>
 
 <script setup>
 
-import {ref, watch} from "vue"
-
-
-const search = ref("")
 
 const listPokemon = await fetch('https://pokeapi.co/api/v2/pokemon/?limit=1126')
 const pokemons = await listPokemon.json()
@@ -27,7 +20,7 @@ let listSearch = pokemons.results
 
 </script>
 
-<style>
+<style scoped>
 .caixa{
     background: rgba(248, 227, 227, 0.452);
     width: 100%;
@@ -41,29 +34,22 @@ let listSearch = pokemons.results
     text-align: center;
 }
 
-.search-title{
-    position: relative;
-}
-
-.search{
-    padding: 4px 12px;
-    color: black;
-    border: 1px solid black;
-    background: white;
-    width: 400px;
-}
-
-.enviar{
-    margin-left: 5px;
-    padding: 3px 12px;
-}
-
-
 .logo{
     width: 60%;
 }
 
-li{
+a{
+    text-decoration: none;
+    color: black;
+}
+
+a:hover {
+    color: yellow;
+    transform: scale(1.2);
+    text-decoration: underline;
+}
+
+.listaPoke{
     display: inline-block;
     text-align: center;
     width: 22%;
@@ -76,9 +62,23 @@ li{
     text-transform: uppercase;
     transition: 500ms;
 }   
-li:hover {
+.listaPoke:hover {
     transform:scale(1.2);
-    border: none;
-    color: yellow;
 }
+
+@media screen and (max-width: 540px) {
+    .caixa {
+        width: auto;
+    }
+    .centralizado{
+        text-align: center;
+    }
+
+    .listaPoke{
+        width: 90%;
+        margin-right: 10px;
+        text-align: center;
+    }
+}
+
 </style>
