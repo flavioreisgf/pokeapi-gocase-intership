@@ -1,9 +1,8 @@
 <template>
 <div class="caixa">
     <h1 class="centralizado"><img class="logo" src="https://i2.wp.com/multarte.com.br/wp-content/uploads/2019/03/pokemon-png-logo.png?fit=2000%2C736&ssl=1" alt="Logo Pokemon sem fundo"></h1>
-
     <ul>
-        <li class="listaPoke" v-for="pokemon in listSearch" :key="pokemon.name"><a :href="'pokemon/' + pokemon.name">{{pokemon.name}}</a></li>
+        <li class="listaPoke" v-for="pokemon in listSearch" :key="pokemon.name"><a :href="'pokemon/' + pokemon.name"><img src="https://www.pinpng.com/pngs/m/8-82850_poke-ball-png-pokeball-png-transparent-png.png" width="20px" height="20px" alt="pokebola"> {{pokemon.name}}</a></li>
     </ul>
 </div>
 </template>
