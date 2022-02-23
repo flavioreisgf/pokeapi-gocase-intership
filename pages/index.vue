@@ -13,9 +13,9 @@
 </template>
 
 <script setup>
-import { ref } from 'vue';
+//import { ref } from 'vue';
 
-/*Another way of getting the API data
+/*Another way of getting the API data/
 let listSearch = ref([])
 
 fetch('https://pokeapi.co/api/v2/pokemon/?limit=1126')
