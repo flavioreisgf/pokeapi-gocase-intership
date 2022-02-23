@@ -32,7 +32,7 @@ h1, p {
 .caixa{
     background: rgba(248, 227, 227, 0.452);
     width: 100%;
-    height: 100%;
+    height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -55,5 +55,19 @@ h1, p {
 li:hover {
     transform:scale(1.2);
     color: yellow;
+}
+@media screen and (max-width: 540px) {
+    .caixa {
+        width: auto;
+    }
+    h1, p{
+        text-align: center;
+    }
+
+    .lista-abilities{
+        width: 90%;
+        margin-right: 10px;
+        text-align: center;
+    }
 }
 </style>

@@ -1,21 +1,27 @@
 <template>
 <div class="caixa">
-    <h1 class="centralizado"><img class="logo" src="https://i2.wp.com/multarte.com.br/wp-content/uploads/2019/03/pokemon-png-logo.png?fit=2000%2C736&ssl=1" alt="Logo Pokemon sem fundo"></h1>
-    <ul>
-        <li class="listaPoke" v-for="pokemon in listSearch" :key="pokemon.name"><a :href="'pokemon/' + pokemon.name"><img src="https://www.pinpng.com/pngs/m/8-82850_poke-ball-png-pokeball-png-transparent-png.png" width="20px" height="20px" alt="pokebola"> {{pokemon.name}}</a></li>
-    </ul>
+        <h1 class="centralizado"><img class="logo" src="https://i2.wp.com/multarte.com.br/wp-content/uploads/2019/03/pokemon-png-logo.png?fit=2000%2C736&ssl=1" alt="Logo Pokemon sem fundo"></h1>
+        <ul>
+            <li class="listaPoke" v-for="pokemon in listSearch" :key="pokemon.name"><a :href="'pokemon/' + pokemon.name"><img src="https://www.pinpng.com/pngs/m/8-82850_poke-ball-png-pokeball-png-transparent-png.png" width="20px" height="20px" alt="pokebola"> {{pokemon.name}}</a></li>
+        </ul>
 </div>
 </template>
 
 <script setup>
+import { ref } from 'vue';
+
+/*Another way of getting the API data
+let listSearch = ref([])
+
+fetch('https://pokeapi.co/api/v2/pokemon/?limit=1126')
+    .then((listPokemon) => listPokemon.json())
+    .then((response) => listSearch.value = response.results) */
 
 
 const listPokemon = await fetch('https://pokeapi.co/api/v2/pokemon/?limit=1126')
 const pokemons = await listPokemon.json()
 
 let listSearch = pokemons.results
-
-
 
 </script>
 
