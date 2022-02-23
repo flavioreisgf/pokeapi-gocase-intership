@@ -1,25 +1,25 @@
 <template>
-  <header> <h1>The Pokemon is {{pokemon.name}}</h1> </header>
-  <main> 
-      <div class="caixa">
-        <img :src="pokemon.sprites.front_default" alt="Pokemon Image">
-        <p class="weight">The weight of {{pokemon.name}} is {{pokemon.weight}}</p>
-        <p class="height">The height of {{pokemon.name}} is {{pokemon.height}}</p>
-        <ul>
-          <p>Abilities</p>
-          <li class="lista-abilities" v-for="ability in pokemon.abilities" :key="ability.ability.name">
-            {{ability.ability.name}}
-          </li>
-        </ul>
-      </div>
-  </main>
-  <footer> 
-    <p><a href="https://github.com/flavioreisgf/pokeapi-gocase-intership"> Github Project </a></p> 
-    <button class="button" type="button" onclick="javascript:history.back()">Back</button>
-  </footer>
-  
+  <div class="container">
+    <header> <h1>The Pokemon is {{pokemon.name}}</h1> </header>
+    <main> 
+        <div class="caixa">
+          <img :src="pokemon.sprites.front_default" alt="Pokemon Image">
+          <p class="weight">The weight of {{pokemon.name}} is {{pokemon.weight}}</p>
+          <p class="height">The height of {{pokemon.name}} is {{pokemon.height}}</p>
+          <ul>
+            <p>Abilities</p>
+            <li class="lista-abilities" v-for="ability in pokemon.abilities" :key="ability.ability.name">
+              {{ability.ability.name}}
+            </li>
+          </ul>
+        </div>
+    </main>
+    <footer> 
+      <p><a href="https://github.com/flavioreisgf/pokeapi-gocase-intership"> Github Project </a></p> 
+      <button class="button" type="button" onclick="javascript:history.back()">Back</button>
+    </footer>
+  </div>
 
- 
 </template>
 
 <script setup>
@@ -41,7 +41,6 @@ h1, p {
 .caixa{
     background: rgba(248, 227, 227, 0.452);
     width: 100%;
-    height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -59,6 +58,7 @@ h1, p {
     font-weight: bold;
     text-transform: uppercase;
     transition: 500ms;
+
 }
 
 li:hover {
@@ -78,7 +78,7 @@ a:hover {
 }
 
 header, footer{
-    background: rgba(248, 227, 227, 0.452);
+    background: rgba(194, 46, 46, 0.452);
     width: 100%;
     display: flex;
     align-items: center;
@@ -97,6 +97,13 @@ header, footer{
   display: inline-block;
   font-size: 12px;
   margin-bottom: 1em;
+  transition-duration: 0.4s;
+  cursor: pointer;
+}
+
+.button:hover{
+    background-color: white; 
+    color: #c43636;
 }
 
 @media screen and (max-width: 540px) {
