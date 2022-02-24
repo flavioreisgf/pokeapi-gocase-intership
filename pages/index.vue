@@ -1,15 +1,18 @@
 <template>
-    <header><h1 class="centralizado"><img class="logo" src="https://i2.wp.com/multarte.com.br/wp-content/uploads/2019/03/pokemon-png-logo.png?fit=2000%2C736&ssl=1" alt="Logo Pokemon sem fundo"></h1></header>
+    <header>
+        <h1 class="centralizado"><img class="logo" src="https://i2.wp.com/multarte.com.br/wp-content/uploads/2019/03/pokemon-png-logo.png?fit=2000%2C736&ssl=1" alt="Logo Pokemon sem fundo"></h1>
+    </header>
     <main>
         <div class="caixa">
-            
             <ul>
-                <li class="listaPoke" v-for="pokemon in listSearch" :key="pokemon.name"><a :href="'pokemon/' + pokemon.name"><img src="https://www.pinpng.com/pngs/m/8-82850_poke-ball-png-pokeball-png-transparent-png.png" width="20px" height="20px" alt="pokebola"> {{pokemon.name}}</a></li>
+                <li class="listaPoke" v-for="pokemon in listSearch" :key="pokemon.name"><a :href="'pokemon/' + pokemon.name"><img src="https://img1.gratispng.com/20171220/ofe/pokeball-png-5a3ab8044b97e7.8086813315137976363096.jpg" width="20px" height="20px" alt="pokebola"> {{pokemon.name}}</a></li>
             </ul>
-    </div>
+        </div>
     </main>
+    <footer> 
+        <a href="https://github.com/flavioreisgf/pokeapi-gocase-intership"> Github Project </a> 
+    </footer>
 
-    <footer> <a href="https://github.com/flavioreisgf/pokeapi-gocase-intership"> Github Project </a> </footer>
 </template>
 
 <script setup>

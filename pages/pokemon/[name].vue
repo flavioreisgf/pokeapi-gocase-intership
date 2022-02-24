@@ -33,6 +33,9 @@ const pokemon = await results.json();
 </script>
 
 <style scoped>
+.container{
+  height: 100vh;
+}
 
 h1, p {
   text-transform: capitalize;
@@ -58,6 +61,7 @@ h1, p {
     font-weight: bold;
     text-transform: uppercase;
     transition: 500ms;
+    background:rgba(194, 46, 46, 0.452) ;
 
 }
 
