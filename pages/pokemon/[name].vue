@@ -53,7 +53,7 @@ h1, p {
     display: inline-block;
     text-align: center;
     width: 100%;
-    margin: 1% auto;
+    margin: 5% auto;
     padding: 30px 20px;
     box-sizing: border-box;
     border: solid 2px black;
